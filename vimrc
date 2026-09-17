@@ -63,6 +63,8 @@ set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 set clipboard=unnamed,unnamedplus
 
 "启用右键粘贴
+"先加载系统配置，再用新配置覆盖，避免本人设置被系统设置覆盖
+let g:skip_defaults_vim = 1
 "Vim默认mouse=a(all)，启用鼠标模式，鼠标右键用于定位光标，所以无法像终端一样右键粘贴，关闭即可
 set mouse=
 
