@@ -176,3 +176,45 @@ inoremap > <ESC>:call InsertHtmlTag()<CR>a
 let @t='\v\<\/?\w+>'
 " html 自动换行
 let @a='0A<br/0j'
+
+"----------------------------------------------------------------------
+" 插件安装
+"----------------------------------------------------------------------
+
+
+call plug#begin('/etc/vim/plugged')
+
+    " 一个文件树插件
+    Plug 'preservim/nerdtree'
+
+    	" 展示开始画面，显示最近编辑过的文件
+	Plug 'mhinz/vim-startify'
+
+    "vim-csv csv文件处理
+    "Plug 'chrisbra/csv.vim'
+
+	" 默认不显示 startify
+	"let g:startify_disable_at_vimenter = 1
+    let g:startify_session_autoload = 1
+	let g:startify_session_dir = '~/.vim/session'
+
+	" signify 调优
+	"let g:signify_vcs_list = ['git', 'svn']
+	let g:signify_sign_add               = '+'
+	let g:signify_sign_delete            = '_'
+	let g:signify_sign_delete_first_line = '‾'
+	let g:signify_sign_change            = '~'
+	let g:signify_sign_changedelete      = g:signify_sign_change
+
+    "起始页显示的列表长度
+    let g:startify_files_number = 30
+
+    " 用于在侧边符号栏显示 marks （ma-mz 记录的位置）
+	Plug 'kshenoy/vim-signature'
+
+	" 用于在侧边符号栏显示 git/svn 的 diff
+	Plug 'mhinz/vim-signify'
+
+
+call plug#end()
+
